@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .a {
+        background-color: blue;
+        padding: 10px;
+        width: 50px;
+        transition: .5s ease;
+    }
+
+    .a.x {
+        background-color: green;
+    }
+    
+    .a .b {
+        background-color: red;
+    }
+</style>
+<body>
+    <div class="a">
+        <span class="b">123</span>
+        456
+    </div>
+
+</body>
+<script>
+    const aBox = document.querySelector('.a')
+
+    aBox.addEventListener('click',function() {
+        // aBox.classList.toggle('x')
+
+        if(aBox.className.split(' ').includes('x')){
+            console.log('變回 !!')
+            aBox.classList.remove('x')
+
+            return
+        }
+
+        aBox.classList.add('x')
+        console.log('我變 !!')
+    })
+</script>
+</html>
